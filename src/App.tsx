@@ -729,7 +729,35 @@ export default function App() {
         ) : (
           <>
         <section className="hero-section" aria-label="주요 프로모션">
-          <div className="hero-copy">
+          <div className="hero-copy hero-copy-mobile-safe">
+            <style>{`
+              @media (max-width: 720px) {
+                .hero-copy-mobile-safe {
+                  min-width: 0;
+                  overflow: hidden;
+                  padding: 19px 22px 0;
+                }
+                .hero-copy-mobile-safe .eyebrow {
+                  margin-bottom: 5px;
+                  font-size: 9px;
+                }
+                .hero-copy-mobile-safe h1 {
+                  font-size: 25px;
+                  line-height: 1.16;
+                }
+                .hero-copy-mobile-safe p {
+                  margin-top: 4px;
+                  font-size: 11px;
+                  line-height: 1.35;
+                }
+                .hero-copy-mobile-safe .hero-link {
+                  margin-top: 7px;
+                  padding-bottom: 2px;
+                  font-size: 10px;
+                  line-height: 1.2;
+                }
+              }
+            `}</style>
             <span className="eyebrow">SKECHERS EXCLUSIVE</span>
             <h1>{hero === 0 ? <>편안함의 기준을<br />다시 쓰다</> : <>당신의 모든 걸음에<br />가벼움을</>}</h1>
             <p>{hero === 0 ? 'NEW 아치핏 2.0 컬렉션' : '데일리 워킹 컬렉션'}</p>
